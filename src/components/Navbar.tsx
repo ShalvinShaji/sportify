@@ -37,7 +37,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link 
             href="/" 
-            className={`text-2xl font-bold tracking-tighter ${
+            className={`text-xl lg:text-2xl font-bold tracking-tighter ${
               isScrolled ? 'text-black' : 'text-white'
             }`}
           >
@@ -90,9 +90,10 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden hover:opacity-70 transition-opacity ${
+            className={`lg:hidden p-2 -mr-2 hover:bg-white/10 rounded-lg transition-colors ${
               isScrolled ? 'text-black' : 'text-white'
             }`}
+            aria-label="Toggle mobile menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -100,16 +101,16 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden fixed inset-x-0 top-[65px] p-4 bg-white/90 backdrop-blur-md shadow-lg transition-all duration-300 ${
-            isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+          className={`lg:hidden fixed inset-x-0 top-[65px] p-6 bg-white/90 backdrop-blur-md shadow-lg transition-all duration-300 ease-in-out ${
+            isOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'
           }`}
         >
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-black text-sm font-medium hover:opacity-70 transition-opacity ${
+                className={`text-black text-base font-medium hover:opacity-70 transition-opacity ${
                   pathname === link.href ? 'opacity-100' : 'opacity-80'
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -117,7 +118,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <div className="flex items-center space-x-6 pt-4 border-t border-gray-200">
+            <div className="flex items-center space-x-6 pt-6 border-t border-gray-200">
               <button className="text-black hover:opacity-70 transition-opacity">
                 <Search size={20} />
               </button>
