@@ -16,35 +16,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white">
-      {/* Newsletter Section */}
-      <div className="border-t border-white/10">
-        <div className="max-w-[2000px] mx-auto px-4 lg:px-8 py-16">
-          <div className="max-w-xl mx-auto text-center">
-            <h3 className="text-2xl md:text-3xl font-bold tracking-tighter mb-4">
-              Join the SPORTIFY Community
-            </h3>
-            <p className="text-gray-400 mb-8">
-              Subscribe to receive updates, access to exclusive deals, and more.
-            </p>
-            <form onSubmit={handleSubscribe} className="flex gap-2">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-1 bg-white/10 px-4 py-3 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white/20"
-                required
-              />
-              <button
-                type="submit"
-                className="bg-white text-black px-6 py-3 font-medium hover:bg-gray-100 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Main Footer Content */}
       <div className="border-t border-white/10">
